@@ -1,0 +1,42 @@
+import React,{useState,useEffect} from 'react'
+import '../components/layouts/layout.css'
+import { useAuth } from '../store/auth'
+
+
+const Adminuser = () => {
+  const [users, setusers] = useState([])
+  
+  const {Authorization_Token} = useAuth()
+const getAllusersdata = async () => { 
+  try {
+    const response = await fetch(`http://localhost:3000/api/admin/users`, {
+      method: "GET",
+      headers: {
+        Authorization: Authorization_Token
+      }
+    })
+    const data = await response.json()
+    console.log(data)
+    setusers(data)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+useEffect(() => {
+  getAllusersdata()
+}, [])
+
+  return (
+    <div className="users">
+      {users.map((curUser,index)=>{
+        return <h3 key={index}>{curUser.username}
+        {curUser.email}
+        {curUser.phonenumber}
+        </h3>
+      })}
+    </div>
+  )
+}
+
+export default Adminuser

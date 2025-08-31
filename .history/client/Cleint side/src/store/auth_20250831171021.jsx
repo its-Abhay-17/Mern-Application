@@ -1,0 +1,94 @@
+import { useContext, useState, createContext, useEffect } from "react";
+
+export const Authcontext = createContext();
+
+export const AuthProvider = ({ children }) => {
+  const [token, settoken] = useState(localStorage.getItem("token"));
+  const [userr, setuserr] = useState(null);
+  const [isLoading, setisLoading] = useState(true)
+  const [Services, setServices] = useState([]);
+
+
+  const API = import.meta.env.VITE_APP_URI_API
+  const storetokenIn = (serverToken) => {
+    localStorage.setItem("token", serverToken);
+    settoken(serverToken);
+  };
+
+  let isLoggedIn = !!token;
+  console.log("Is logged In:", isLoggedIn);
+
+  // Log out functionality
+  const LogoutUser = () => {
+    settoken("");
+    localStorage.removeItem("token");
+  };
+
+  const Authorization_Token = token ? `Bearer ${token}` : "";
+  // JWT AUTHENTICATION (auto-fill)
+  const userAuthentication = async () => {
+    try {
+      setisLoading(true)
+      const response = await fetch(`${API}/api/auth/user`, {
+        method: "GET",
+        headers: {
+          Authorization: Authorization_Token,
+        },
+      });
+
+      if (response.ok) {
+        const Data = await response.json();
+        console.log("user data:", Data.UserData);
+        setuserr(Data.UserData);
+        setisLoading(false)
+      } else {
+        console.error("Failed to fetch user data:", response.status);
+        setisLoading(false)
+      }
+    } catch (error) {
+      console.error("Error in userAuthentication:", error);
+    }
+  };
+
+  // to fetch the services from backend
+  const userServices = async () => {
+    try {
+      const response = await fetch(`${API}/api/data/service`, {
+        method: "GET",
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("services data:", data);
+        setServices(data.msg || []);
+      } else {
+        console.error("Failed to fetch services:", response.status);
+      }
+    } catch (error) {
+      console.error("Error in userServices:", error);
+    }
+  };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        await userServices();
+        await userAuthentication();
+      } catch (err) {
+        console.error("AuthProvider crashed:", err);
+      }
+    })();
+  }, []);
+
+  return (
+    <Authcontext.Provider
+      value={{ isLoggedIn, storetokenIn, LogoutUser, userr, Services,isLoading, Authorization_Token,API, userAuthentication }}
+    >
+      {children}
+    </Authcontext.Provider>
+  );
+};
+
+export const useAuth = () => {
+  return useContext(Authcontext);
+};

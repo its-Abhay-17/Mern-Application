@@ -1,0 +1,11 @@
+.container{
+    height: 60vh;
+    width: 50vh;
+    border: 3px red solid;
+
+}
+
+ul{
+        display: flex;
+    flex-direction: column;
+}

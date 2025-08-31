@@ -1,0 +1,22 @@
+const schema = require("mongoose")
+
+const validate = (schema) => async (req, res, next) => {
+    try {
+        const parseBody = await schema.parseAsync(req.body);
+        req.body = parseBody;
+        next();
+    } catch (error) {
+        // const status = 422; 
+        // const message = 'Fill the input properly';
+        // const extraDetails = err.errors && err.errors[0] ? err.errors[0].message : err.message || "Validation error";
+
+        // const error = { status, message, extraDetails };
+
+        // console.log(error);
+        res.json({message:"error"})
+        console.log(error)
+    }
+};
+
+module.exports = validate;
+ 

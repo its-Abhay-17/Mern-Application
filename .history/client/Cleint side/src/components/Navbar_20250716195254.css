@@ -1,0 +1,18 @@
+nav{
+    display: flex;
+    background-color: #00000094;
+    align-items: center;
+    justify-content: space-around;
+}
+
+ul{
+    display: flex;
+    gap: 2rem;
+    list-style-type: none;
+    text-decoration: none;
+    font-weight: 700;
+}
+ul Navlink li{
+    text-decoration: double;
+    color: #99b9ff;
+} 

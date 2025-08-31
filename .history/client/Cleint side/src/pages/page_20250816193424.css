@@ -1,0 +1,411 @@
+body {
+    background-color: var(--dark-color);
+}
+
+:root {
+    --bg-color: #f4f3ff;
+    --btn-color: #646cff;
+    --dark-color: #242424;
+    --helper-color: #99b9ff;
+}
+
+/* CSS FOR LOGIN AND REGISTER */
+.section-parent {
+    margin-top: 5vh;
+    height: 75vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    color: #656bff;
+
+}
+
+.img {
+    height: 70vh;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    height: 70vh;
+    width: 45%;
+}
+
+
+h1 {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: purple;
+    margin-left: 3vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+input {
+    margin-bottom: 2vh;
+    width: 30rem;
+    height: 5vh;
+    background-color: #312f36;
+    border: none;
+    border-radius: 0.4rem;
+}
+
+.res {
+    width: 30vh;
+    margin-left: 5vh;
+    background-color: #656bff;
+    height: 6vh;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-weight: 400;
+    margin-left: 15vh;
+}
+
+/* CSS FOR HOME PAGE */
+
+.firstChild {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-parent {
+    height: 70vh;
+    display: flex;
+    justify-content: space-around;
+    width: 70rem;
+    margin-left: 20vh;
+}
+
+.home {
+    height: 70vh;
+    color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+& h1 {
+    font-size: 2.8rem;
+    margin: 4vh 2px;
+}
+
+& .home h3 {
+    margin: 0 2px;
+}
+
+.home-img img {
+    height: 60%;
+}
+
+.buttons button {
+    color: white;
+    border: none;
+    height: 5vh;
+    background-color: #656bff;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-top: 2vh;
+}
+
+.buttons button:hover {
+    box-shadow: inset 0 0 0 0.1rem var(--bg-color);
+}
+
+.buttons :last-child {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 0.1rem var(--bg-color);
+    margin-left: 2.2rem;
+}
+
+.home-img {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    width: 60rem;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f3ff;
+    color: white;
+    border-radius: 0.9rem;
+}
+
+.div1 {
+    width: 23%;
+    color: var(--dark-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid black;
+
+}
+
+& p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.div1 h4 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.info :last-child {
+    border-right: none;
+}
+
+.end-Section {
+    height: 70vh;
+    width: 160vh;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.end-img {
+    height: 85%;
+    width: 45%;
+}
+
+.end-Content {
+    height: 85%;
+    width: 45%;
+    color: white;
+}
+
+.end-Content h1 {
+    margin: 2vh 0;
+}
+
+.end-Content h4 {
+    margin: 0 0;
+    font-size: 1.2rem;
+}
+
+.end-Content :first-child {
+    margin-top: 5vh;
+}
+
+.end-Content .buttons button {
+    width: 15vh;
+}
+
+/* CSS FOR ABOUT PAGE */
+
+.about-parent {
+    width: 70%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about-content {
+    width: 60%;
+    height: 90%;
+    color: var(--bg-color);
+}
+
+.about-img {
+    width: 48%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-content h2,
+h4 {
+    margin: 0.5rem 0;
+}
+
+.about-content h2 {
+    font-size: 2.1rem;
+}
+
+.about-content p {
+    margin-bottom: 1.3rem;
+}
+
+/* CSS FOR Contact PAGE */
+
+.ContactUs h2 {
+    margin-left: 20vh;
+    text-decoration: underline;
+    color: var(--bg-color);
+}
+
+.content-Contact {
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: start;
+}
+
+.content-Contact input {
+    width: 50vh;
+    border-radius: 5px;
+    margin-bottom: 3vh;
+}
+
+.content-Contact :nth-child(6) {
+    height: 30vh;
+}
+
+.content-Contact label {
+    color: var(--bg-color);
+
+}
+
+.content-Contact .firstChild {
+    margin-top: 5vh;
+}
+
+.btn {
+    border: none;
+    width: 16vh;
+    height: 5vh;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--btn-color);
+    border-radius: 5px;
+    color: var(--bg-color);
+}
+
+.btn:hover {
+    box-shadow: inset 0 0 0 0.1rem var(--bg-color);
+}
+
+.map-section {
+    margin-top: 9vh;
+}
+
+#based {
+    color: var(--bg-color);
+    font-size: 1.5rem;
+    margin: 0 5vh;
+}
+
+footer {
+    margin-bottom: 0;
+    height: 14vh;
+    background-color: var(--btn-color);
+    color: var(--bg-color);
+    font-size: 1.2rem;
+    width: 90%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 5vh;
+}
+
+/* CSS FOR ERROR PAGE */
+
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error h1 {
+    margin: 0;
+    font-size: 10rem;
+    text-decoration: none;
+}
+
+.error h1,
+h3,
+.btns {
+    text-align: center;
+}
+
+.error p {
+    width: 35rem;
+    margin-bottom: 2vh;
+}
+
+.btns a {
+    margin-top: 3vh;
+    text-decoration: none;
+    margin-left: 2vh;
+    color: var(--bg-color);
+    border-radius: 5px;
+    width: 10rem;
+    height: 8vh;
+    background-color: var(--btn-color);
+
+}
+
+.btns a:hover {
+    box-shadow: inset 0 0 0 0.1rem var(--bg-color);
+    background-color: transparent;
+}
+
+.masked-text {
+    font-size: 8rem;
+    font-weight: bold;
+    color: transparent;
+    background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: 200%;
+    /* Enlarged for smooth animation */
+    background-position: 0 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 5s infinite alternate linear;
+}
+
+@keyframes animate-background {
+    0% {
+        background-position: 0 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* here the css of service page  */
+
+.container {
+    border: 3px solid blue;
+}
+.cards-container {
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    border: 2px solid white;
+    width: 30vh;
+    margin-bottom: 5vh;
+}
+
+.short-details{
+    display: flex;
+}
